@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Borel&family=Inter&family=Poppins&display=swap');
+p#logo {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 20px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
