@@ -1,1 +1,57 @@
-YXN5bmMgZnVuY3Rpb24gZGVwbG95VG9OZXRsaWZ5KHNpdGVOYW1lLCBmaWxlcykgewpjb25zdCBvcHRpb25zID0gewogIG1ldGhvZDogJ0dFVCcsCiAgaGVhZGVyczoge0F1dGhvcml6YXRpb246ICdCZWFyZXIgenU0eFNjeTNoY1NLX3lMeUFWcXUwd2VsTVpSaW1HbU1yR1RuM05xRFhPayd9Cn07CgpmZXRjaCgnaHR0cHM6Ly9hcGkubmV0bGlmeS5jb20vYXBpL3YxL3NpdGVzLycsIG9wdGlvbnMpCiAgLnRoZW4ocmVzcG9uc2UgPT4gcmVzcG9uc2UuanNvbigpKQogIC50aGVuKHJlc3BvbnNlID0+IHJlc3BvbnNlLmZvckVhY2goYXN5bmMgKG9iaikgPT4gewogIGlmKG9iai5uYW1lID09PSBzaXRlTmFtZSl7CiAgICBzaXRlaWQ9b2JqLmlkOwogICAgICAgICAgICAgICAgY29uc3QgYXBpVXJsID0gJ2h0dHBzOi8vYXBpLm5ldGxpZnkuY29tL2FwaS92MS9zaXRlcy9ZT1VSX1NJVEVfSUQvZGVwbG95cyc7IC8vIFJlcGxhY2Ugd2l0aCB5b3VyIGFjdHVhbCBzaXRlIElECgogICAgICAgICAgICBjb25zdCBoZWFkZXJzID0gbmV3IEhlYWRlcnMoewogICAgICAgICAgICAgICAgQXV0aG9yaXphdGlvbjogYEJlYXJlciBZT1VSX0FQSV9BQ0NFU1NfVE9LRU5gLCAvLyBSZXBsYWNlIHdpdGggeW91ciBhY3R1YWwgTmV0bGlmeSBBUEkgdG9rZW4KICAgICAgICAgICAgICAgICdDb250ZW50LVR5cGUnOiAnYXBwbGljYXRpb24vanNvbicKICAgICAgICAgICAgfSk7CgogICAgICAgICAgICBjb25zdCBmaWxlSGFzaGVzID0ge307CiAgICAgICAgICAgIGZvciAoY29uc3QgZmlsZW5hbWUgaW4gZmlsZXMpIHsKICAgICAgICAgICAgICAgIGNvbnN0IGNvbnRlbnQgPSBmaWxlc1tmaWxlbmFtZV07CiAgICAgICAgICAgICAgICBjb25zdCBoYXNoID0gc2hhMShjb250ZW50KTsgLy8gQ2FsY3VsYXRlIFNIQS0xIGhhc2gKICAgICAgICAgICAgICAgIGZpbGVIYXNoZXNbYC8ke2ZpbGVuYW1lfWBdID0gaGFzaDsKICAgICAgICAgICAgfQoKICAgICAgICAgICAgY29uc3QgcmVxdWVzdEJvZHkgPSB7CiAgICAgICAgICAgICAgICBmaWxlczogZmlsZUhhc2hlcywKICAgICAgICAgICAgICAgIGZ1bmN0aW9uczoge30KICAgICAgICAgICAgfTsKCiAgICAgICAgICAgIHRyeSB7CiAgICAgICAgICAgICAgICBjb25zdCByZXNwb25zZSA9IGF3YWl0IGZldGNoKGFwaVVybCwgewogICAgICAgICAgICAgICAgICAgIG1ldGhvZDogJ1BPU1QnLAogICAgICAgICAgICAgICAgICAgIGhlYWRlcnM6IGhlYWRlcnMsCiAgICAgICAgICAgICAgICAgICAgYm9keTogSlNPTi5zdHJpbmdpZnkocmVxdWVzdEJvZHkpCiAgICAgICAgICAgICAgICB9KTsKCiAgICAgICAgICAgICAgICBjb25zdCBkYXRhID0gYXdhaXQgcmVzcG9uc2UuanNvbigpOwoKICAgICAgICAgICAgICAgIHJldHVybiB7CiAgICAgICAgICAgICAgICAgICAgc3VjY2VzczogdHJ1ZSwKICAgICAgICAgICAgICAgICAgICBkZXBsb3lJZDogZGF0YS5pZCwKICAgICAgICAgICAgICAgICAgICByZXF1aXJlZEZpbGVzOiBkYXRhLnJlcXVpcmVkLAogICAgICAgICAgICAgICAgICAgIHJlcXVpcmVkRnVuY3Rpb25zOiBkYXRhLnJlcXVpcmVkX2Z1bmN0aW9ucwogICAgICAgICAgICAgICAgfTsKICAgICAgICAgICAgfSBjYXRjaCAoZXJyb3IpIHsKICAgICAgICAgICAgICAgIHJldHVybiB7CiAgICAgICAgICAgICAgICAgICAgc3VjY2VzczogZmFsc2UsCiAgICAgICAgICAgICAgICAgICAgZXJyb3I6IGVycm9yLm1lc3NhZ2UKICAgICAgICAgICAgICAgIH07CiAgICAgICAgICAgIH0KICB9Cn0pKQogIC5jYXRjaChlcnIgPT4gY29uc29sZS5lcnJvcihlcnIpKTsgICAKICAgICAgICB9CgogICAg
+async function deployToNetlify(siteName, files) {
+const options = {
+  method: 'GET',
+  headers: {Authorization: 'Bearer zu4xScy3hcSK_yLyAVqu0welMZRimGmMrGTn3NqDXOk'}
+};
+
+fetch('https://api.netlify.com/api/v1/sites/', options)
+  .then(response => response.json())
+  .then(response => response.forEach(async (obj) => {
+  if(obj.name === siteName){
+    siteid=obj.id;
+                const apiUrl = 'https://api.netlify.com/api/v1/sites/YOUR_SITE_ID/deploys'; // Replace with your actual site ID
+
+            const headers = new Headers({
+                Authorization: `Bearer YOUR_API_ACCESS_TOKEN`, // Replace with your actual Netlify API token
+                'Content-Type': 'application/json'
+            });
+
+            const fileHashes = {};
+            for (const filename in files) {
+                const content = files[filename];
+                const hash = sha1(content); // Calculate SHA-1 hash
+                fileHashes[`/${filename}`] = hash;
+            }
+
+            const requestBody = {
+                files: fileHashes,
+                functions: {}
+            };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: headers,
+                    body: JSON.stringify(requestBody)
+                });
+
+                const data = await response.json();
+
+                return {
+                    success: true,
+                    deployId: data.id,
+                    requiredFiles: data.required,
+                    requiredFunctions: data.required_functions
+                };
+            } catch (error) {
+                return {
+                    success: false,
+                    error: error.message
+                };
+            }
+  }
+}))
+  .catch(err => console.error(err));   
+        }
+
+    

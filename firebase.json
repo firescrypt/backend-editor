@@ -1,1 +1,16 @@
-ewogICJib2FzdGluZyI6IHsKICAgICJwdWJsaWMiOiAicHVibGljIiwKICAgICJpZ25vcmUiOiBbCiAgICAgICJmaXJlYmFzZS5qc29uIiwKICAgICAgIioqLy4qIiwKICAgICAgIioqL25vZGVfbW9kdWxlcy8qKiIKICAgIF0sCiAgICAicmV3cml0ZXMiOiBbCiAgICAgIHsKICAgICAgICAic291cmNlIjogIioqIiwKICAgICAgICAiZGVzdGluYXRpb24iOiAiL2luZGV4Lmh0bWwiCiAgICAgIH0KICAgIF0KICB9Cn0K
+{
+  "boasting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
